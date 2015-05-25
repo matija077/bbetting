@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django_nose',
     'rest_framework',
     'corsheaders',
+    'betting',
 )
 
 MIDDLEWARE_CLASSES = (
