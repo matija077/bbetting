@@ -24,3 +24,18 @@ class ListOfBets(models.Model):
     song = models.ForeignKey(Song)
     unique_together = ("bet_id", "song")
     data = models.CharField(max_length=20)
+
+class Artist(models.Model):
+    name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=10)
+    models.ManyToManyField(Song, through='Collaboration')
+
+class Collaboration(models.Model):
+    artist_id = models.ForeignKey(Artist)
+    song = models.ForeignKey(Song)
+    unique_together = ("artist_id", "song")
+    
+    
+    
+    
+    
